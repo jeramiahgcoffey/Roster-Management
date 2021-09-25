@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		00C9D06426E932DB006917CA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 00C9D06326E932DB006917CA /* main.cpp */; };
+		00C9D06E26E9356F006917CA /* student.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 00C9D06D26E9356F006917CA /* student.cpp */; };
+		00C9D07126E9358B006917CA /* roster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 00C9D07026E9358B006917CA /* roster.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +25,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0016EA2526FFB86D003FA5B2 /* requirements.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = requirements.txt; sourceTree = "<group>"; };
 		00C9D06026E932DB006917CA /* pa_jym1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = pa_jym1; sourceTree = BUILT_PRODUCTS_DIR; };
 		00C9D06326E932DB006917CA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		00C9D06D26E9356F006917CA /* student.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = student.cpp; sourceTree = "<group>"; };
+		00C9D06F26E9357A006917CA /* student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = student.h; sourceTree = "<group>"; };
+		00C9D07026E9358B006917CA /* roster.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = roster.cpp; sourceTree = "<group>"; };
+		00C9D07226E9359D006917CA /* roster.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = roster.h; sourceTree = "<group>"; };
+		00C9D07326E935AC006917CA /* degree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = degree.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,12 @@
 			isa = PBXGroup;
 			children = (
 				00C9D06326E932DB006917CA /* main.cpp */,
+				00C9D06D26E9356F006917CA /* student.cpp */,
+				00C9D06F26E9357A006917CA /* student.h */,
+				00C9D07026E9358B006917CA /* roster.cpp */,
+				00C9D07226E9359D006917CA /* roster.h */,
+				00C9D07326E935AC006917CA /* degree.h */,
+				0016EA2526FFB86D003FA5B2 /* requirements.txt */,
 			);
 			path = pa_jym1;
 			sourceTree = "<group>";
@@ -88,7 +102,7 @@
 		00C9D05826E932DB006917CA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1300;
 				TargetAttributes = {
 					00C9D05F26E932DB006917CA = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -119,6 +133,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				00C9D06426E932DB006917CA /* main.cpp in Sources */,
+				00C9D07126E9358B006917CA /* roster.cpp in Sources */,
+				00C9D06E26E9356F006917CA /* student.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +255,7 @@
 		00C9D06826E932DB006917CA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -247,6 +264,7 @@
 		00C9D06926E932DB006917CA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
