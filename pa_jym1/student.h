@@ -37,7 +37,10 @@ public:
     
     // Destructor declaration
     ~Student();
-    
+    // Copy Contructor
+    Student(const Student& object_to_copy);
+    // Copy Assignment Operator
+    Student& operator=(const Student& object_to_copy);
     
     // Getter declarations  // Reqirement D.2.a
     string get_student_id() const;
