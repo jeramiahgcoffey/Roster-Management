@@ -10,7 +10,7 @@
 #include <string>
 
 
-enum class DegreeProgram { SECURITY, NETWORK, SOFTWARE };
+enum DegreeProgram { SECURITY, NETWORK, SOFTWARE }; // Requirement C
 //std::string degree_program_strings[] { "SECURITY", "NETWORK", "SOFTWARE" };
 
 

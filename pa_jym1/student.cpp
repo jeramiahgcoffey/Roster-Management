@@ -12,12 +12,17 @@
 
 using std::string;
 
-// Implementation of constructor
+// Implementation of constructor    // Requirement D.2.d
 Student::Student(string student_id, string first_name, string last_name, string email_address, int age, int days_remaining_in_each_course[3], DegreeProgram degree_program)
-: student_id{student_id}, first_name{first_name}, last_name{last_name}, email_address{email_address}, age{age}, days_remaining_in_each_course{days_remaining_in_each_course[3]}, degree_program{degree_program} {
+    : student_id{student_id}, first_name{first_name}, last_name{last_name}, email_address{email_address}, age{age}, days_remaining_in_each_course{days_remaining_in_each_course[3]}, degree_program{degree_program} {
 }
 
-// Implementation of getters
+// Implementation of default constructor
+Student::Student()
+: student_id{""}, first_name{""}, last_name{""}, email_address{""}, age{-1}, days_remaining_in_each_course{-1, -1, -1}, degree_program{} {
+}
+
+// Implementation of getters    // Reqirement D.2.a
 string Student::get_student_id() {
     return student_id;
 }
@@ -38,15 +43,15 @@ int Student::get_age() {
     return age;
 }
 
-int Student::get_days_remaining() {
-    return *days_remaining_in_each_course;
+int* Student::get_days_remaining() {
+    return days_remaining_in_each_course;
 }
 
 DegreeProgram Student::get_degree_program() {
     return degree_program;
 }
 
-//Implementation of setters
+//Implementation of setters   // Reqirement D.2.b
 void Student::set_student_id(string id_val) {
     student_id = id_val;
 }
