@@ -10,8 +10,8 @@
 #include <string>
 
 
-enum DegreeProgram { SECURITY, NETWORK, SOFTWARE }; // Requirement C
-//std::string degree_program_strings[] { "SECURITY", "NETWORK", "SOFTWARE" };
+enum DegreeProgram { SECURITY, NETWORK, SOFTWARE, UNDECIDED }; // Requirement C
+const static std::string DEGREE_PROGRAM_STRINGS[] { "SECURITY", "NETWORK", "SOFTWARE", "UNDECIDED" };
 
 
 #endif /* degree_h */
