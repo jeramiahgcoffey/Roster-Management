@@ -5,7 +5,6 @@
 //  Created by Jeramiah Coffey on 9/8/21.
 //
 
-#include <stdio.h>
 #include <string>
 #include <iostream>
 #include <iomanip>
@@ -31,6 +30,13 @@ Student::Student()
     for (size_t i = 0; i < DAYS_ARR_SIZE; i++) this->days_remaining_in_each_course[i] = 0;
 }
 
+// Implementation of destructor
+Student::~Student() {
+    if (days_remaining_in_each_course != nullptr) {
+        delete [] days_remaining_in_each_course;
+        days_remaining_in_each_course = nullptr;
+    }
+}
 
 // Implementation of getters    // Reqirement D.2.a
 string Student::get_student_id() {

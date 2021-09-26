@@ -11,8 +11,8 @@
 
 #include <string>
 
-
 using std::string;
+
 
 class Student {
     
@@ -34,6 +34,9 @@ public:
     
     // Default Contructor declaration
     Student();
+    
+    // Destructor declaration
+    ~Student();
     
     
     // Getter declarations  // Reqirement D.2.a
