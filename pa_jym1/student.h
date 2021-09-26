@@ -52,6 +52,9 @@ public:
 //    void set_days_remaining();
 //    void set_degree_program();
     
+    // Print specific student data    // Requirement D.2.e
+    void print();
+    
 };
 
 #endif /* student_h */

@@ -7,10 +7,16 @@
 
 #include <stdio.h>
 #include <string>
+#include <iostream>
+#include <iomanip>
 
 #include "student.h"
 
 using std::string;
+using std::cout;
+using std::endl;
+using std::left;
+using std::setw;
 
 // Implementation of constructor    // Requirement D.2.d
 Student::Student(string student_id, string first_name, string last_name, string email_address, int age, int days_remaining_in_each_course[3], DegreeProgram degree_program)
@@ -74,3 +80,15 @@ void Student::set_age(int age_val) {
 
 //void Student::set_days_remaining(){}
 //void Student::set_degree_program(){}
+
+// Print student data    // Requirement D.2.e
+void Student::print() {
+    cout << left << setw(10) << student_id;
+    cout << left << setw(10) << first_name;
+    cout << left << setw(10) << last_name;
+    cout << left << setw(30) << email_address;
+    cout << left << setw(10) << age;
+    cout << left << setw(20) << days_remaining_in_each_course;
+    cout << left << setw(10) << degree_program;
+}
+
