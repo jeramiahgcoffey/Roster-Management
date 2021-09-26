@@ -40,13 +40,13 @@ public:
     
     
     // Getter declarations  // Reqirement D.2.a
-    string get_student_id();
-    string get_first_name();
-    string get_last_name();
-    string get_email_address();
-    int get_age();
-    int* get_days_remaining();
-    DegreeProgram get_degree_program();
+    string get_student_id() const;
+    string get_first_name() const;
+    string get_last_name() const;
+    string get_email_address() const;
+    int get_age() const;
+    int* get_days_remaining() const;
+    DegreeProgram get_degree_program() const;
     
     // Setter declarations  // Reqirement D.2.b
     void set_student_id(string);
@@ -58,7 +58,7 @@ public:
     void set_degree_program(DegreeProgram);
     
     // Print specific student data    // Requirement D.2.e
-    void print();
+    void print() const;
     
 };
 

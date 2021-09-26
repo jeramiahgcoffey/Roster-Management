@@ -39,31 +39,31 @@ Student::~Student() {
 }
 
 // Implementation of getters    // Reqirement D.2.a
-string Student::get_student_id() {
+string Student::get_student_id() const {
     return student_id;
 }
 
-string Student::get_first_name() {
+string Student::get_first_name() const {
     return first_name;
 }
 
-string Student::get_last_name() {
+string Student::get_last_name() const {
     return last_name;
 }
 
-string Student::get_email_address() {
+string Student::get_email_address() const {
     return email_address;
 }
 
-int Student::get_age() {
+int Student::get_age() const {
     return age;
 }
 
-int* Student::get_days_remaining() {
+int* Student::get_days_remaining() const {
     return days_remaining_in_each_course;
 }
 
-DegreeProgram Student::get_degree_program() {
+DegreeProgram Student::get_degree_program() const {
     return degree_program;
 }
 
@@ -97,7 +97,7 @@ void Student::set_degree_program(DegreeProgram program_val) {
 }
 
 // Print student data    // Requirement D.2.e
-void Student::print() {
+void Student::print() const {
     cout << left << setw(5) << student_id;
     cout << left << setw(10) << first_name;
     cout << left << setw(10) << last_name;

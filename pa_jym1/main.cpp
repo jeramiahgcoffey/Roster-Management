@@ -15,6 +15,7 @@ using std::endl;
 
 int main() {
     
+    static const int num_of_students {5};
     const string studentData[] { // Requirement A
         "A1,John,Smith,John1989@gm ail.com,20,30,35,40,SECURITY",
         "A2,Suzan,Erickson,Erickson_1990@gmailcom,19,50,30,40,NETWORK",
@@ -33,10 +34,10 @@ int main() {
     DegreeProgram jDegree {SOFTWARE};
 
     Student jeramiahCoffey = Student(jId, jFirst, jLast, jEmail, jAge, jDays_remaining, jDegree);
-//    cout << jeramiahCoffey.get_days_remaining() << endl;
+ //    cout << jeramiahCoffey.get_days_remaining() << endl;
     jeramiahCoffey.print();
     jeramiahCoffey.set_days_remaining(new_remaining);
     jeramiahCoffey.print();
-//
+
     return 0;
 }
