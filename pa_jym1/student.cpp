@@ -82,8 +82,13 @@ void Student::set_age(int age_val) {
     age = age_val;
 }
 
-//void Student::set_days_remaining(){}
-//void Student::set_degree_program(){}
+void Student::set_days_remaining(int days_remaining[DAYS_ARR_SIZE]) {
+    for (size_t i = 0; i < DAYS_ARR_SIZE; i++) days_remaining_in_each_course[i] = days_remaining[i];
+}
+
+void Student::set_degree_program(DegreeProgram program_val) {
+    degree_program = program_val;
+}
 
 // Print student data    // Requirement D.2.e
 void Student::print() {

@@ -46,13 +46,13 @@ public:
     DegreeProgram get_degree_program();
     
     // Setter declarations  // Reqirement D.2.b
-    void set_student_id(string id_val);
-    void set_first_name(string first_name_val);
-    void set_last_name(string last_name_val);
-    void set_email_address(string email_val);
-    void set_age(int age_val);
-//    void set_days_remaining();
-//    void set_degree_program();
+    void set_student_id(string);
+    void set_first_name(string);
+    void set_last_name(string);
+    void set_email_address(string);
+    void set_age(int);
+    void set_days_remaining(int[]);
+    void set_degree_program(DegreeProgram);
     
     // Print specific student data    // Requirement D.2.e
     void print();

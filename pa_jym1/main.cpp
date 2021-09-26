@@ -23,17 +23,20 @@ int main() {
         "A5,Jeramiah,Coffey,jerrygcoffey@gmail.com,24,15,20,25,SOFTWARE" };
     
 //    Test
-    string jId {"123"};
-    string jFirst {"jeramiah"};
-    string jLast {"coffey"};
-    string jEmail {"jerrygcoffey@gmail.com"};
-    int jAge {24};
-    int days_remaining[] {1, 2, 3};
-    DegreeProgram jDegree {SOFTWARE};
-    
-    Student jeramiahCoffey = Student(jId, jFirst, jLast, jEmail, jAge, days_remaining, jDegree);
-//    cout << jeramiahCoffey.get_days_remaining() << endl;
-    jeramiahCoffey.print();
-    
+//    string jId {"123"};
+//    string jFirst {"jeramiah"};
+//    string jLast {"coffey"};
+//    string jEmail {"jerrygcoffey@gmail.com"};
+//    int jAge {24};
+//    int jDays_remaining[] {1, 2, 3};
+//    int new_remaining[] {4, 5, 6};
+//    DegreeProgram jDegree {SOFTWARE};
+//    
+//    Student jeramiahCoffey = Student(jId, jFirst, jLast, jEmail, jAge, jDays_remaining, jDegree);
+////    cout << jeramiahCoffey.get_days_remaining() << endl;
+//    jeramiahCoffey.print();
+//    jeramiahCoffey.set_days_remaining(new_remaining);
+//    jeramiahCoffey.print();
+//    
     return 0;
 }
