@@ -27,7 +27,7 @@ Student::Student(string student_id, string first_name, string last_name, string 
 // Implementation of default constructor
 Student::Student()
 : student_id{""}, first_name{""}, last_name{""}, email_address{""}, age{-1}, days_remaining_in_each_course{new int[DAYS_ARR_SIZE]}, degree_program{UNDECIDED} {
-    for (size_t i = 0; i < DAYS_ARR_SIZE; i++) this->days_remaining_in_each_course[i] = 0;
+    for (size_t i = 0; i < DAYS_ARR_SIZE; i++) days_remaining_in_each_course[i] = 0;
 }
 
 // Implementation of destructor

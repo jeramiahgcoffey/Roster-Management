@@ -16,7 +16,7 @@ using std::string;
 
 class Student {
     
-private: // Requirement D.1 & D.2.c
+private: // Data Members   // Requirement D.1 & D.2.c
     string student_id;
     string first_name;
     string last_name;
@@ -48,7 +48,7 @@ public:
     string get_last_name() const;
     string get_email_address() const;
     int get_age() const;
-    int* get_days_remaining() const;
+    int* get_days_remaining() const ;
     DegreeProgram get_degree_program() const;
     
     // Setter declarations  // Reqirement D.2.b
