@@ -11,18 +11,20 @@
 #include "student.h"
 
 class Roster {
-public:
+private:
     // Data Members
     int head_count;
-    Student **classRosterArray; //Requirement E.1
+    int roster_max_size;
+    Student** class_roster_array; //Requirement E.1
     
+public:
     // Constructors/Destructor
     Roster();
-    Roster(int head_count);
+    Roster(const string studentData[], int head_count, int roster_max_size);
     ~Roster();
     
     // Public methods    // Requirements E.3.a-f
-    void add(string, string, string, string, int, int, int, int, DegreeProgram);  //that sets the instance variables from part D1 and updates the roster.
+    void add(string student_id, string first_name, string last_name, string email_address, int age, int days_in_course_1, int days_in_course_2, int days_in_course_3, DegreeProgram degree_program);  // sets the instance variables from part D1 and updates the roster.
 
     void remove(string);  //that removes students from the roster by student ID. If the student ID does not exist, the function prints an error message indicating that the student was not found.
 

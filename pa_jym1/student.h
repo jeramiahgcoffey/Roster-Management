@@ -27,7 +27,7 @@ private: // Data Members   // Requirement D.1 & D.2.c
     
 public:
     
-    const static int DAYS_ARR_SIZE {3};
+    static const int DAYS_ARR_SIZE {3};
     
     // Contructor declaration   // Requirement D.2.d
     Student(string student_id, string first_name, string last_name, string email_address, int age, int days_remaining_in_each_course[], DegreeProgram degree_program);
