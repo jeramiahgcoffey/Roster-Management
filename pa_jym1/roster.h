@@ -11,23 +11,21 @@
 #include "student.h"
 
 class Roster {
-private:
-    // Data Members
-    int headCount;
-    int rosterMaxSize;
-    Student** classRosterArray; //Requirement E.1
-    
+
 public:
-    // Constructor/Destructor
+    /*----- CONSTRUCTOR DECLERATION -----*/
     Roster(const string studentData[] = nullptr, int headCount = -1, int rosterMaxSize = 0);
+    
+    /*----- DESTRUCTOR DECLERATION -----*/
     ~Roster();
     
-    // Public methods    // Requirements E.3.a-f
-    void add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram);
-    
+    /*----- ACCESSOR DECLERATIONS -----*/
     int getHeadCount();
     
     Student** getRosterArray();
+    
+    /*----- PUBLIC METHOD DECLERATIONS -----*/    // Requirements E.3.a-f
+    void add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram);
 
     void remove(string studentID);
 
@@ -38,6 +36,14 @@ public:
     void printInvalidEmails();
     
     void printByDegreeProgram(DegreeProgram degreeProgram);
+    
+private:
+    
+    /*----- DATA MEMBERS -----*/
+    int headCount;
+    int rosterMaxSize;
+    Student** classRosterArray; //Requirement E.1
+    
 };
 
 #endif /* roster_h */

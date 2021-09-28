@@ -21,8 +21,7 @@ using std::setw;
 using std::setfill;
 using std::stoi;
 
-// Implementation of Constructor
-// Requirement E.1
+/*----- CONSTRUCTOR IMPLEMENTATION -----*/    // Requirement E.1
 Roster::Roster(const string studentData[], int headCount, int rosterMaxSize) : classRosterArray{new Student * [rosterMaxSize]}, headCount{headCount} {
     for (size_t i = 0; i < headCount; i++) { // Loops through every student in studentData array
         // Requirement E.2.a
@@ -56,10 +55,10 @@ Roster::Roster(const string studentData[], int headCount, int rosterMaxSize) : c
         classRosterArray[i] = new Student(id, firstName, lastName, email, age, courseDaysRemaining, degreeProgram);
         
     }
-    cout << "\nRoster Constructor Called.." << endl;
+    //cout << "\nRoster Constructor Called.." << endl;
 }
 
-// Implementation of destructor
+/*----- DESTRUCTOR IMPLEMENTATION -----*/
 Roster::~Roster(){
     for (size_t i = 0; i < headCount; i++) {
         delete classRosterArray[i];
@@ -67,11 +66,10 @@ Roster::~Roster(){
     }
     delete[] classRosterArray;
     classRosterArray = nullptr;
-    cout << "\nRoster Destructor Called.." << endl;
+    //cout << "\nRoster Destructor Called.." << endl;
 }
 
-// Implementation of public methods
-
+/*----- ACCESSOR IMPLEMENTATIONS -----*/
 int Roster::getHeadCount() {
     return headCount;
 }
@@ -80,6 +78,7 @@ Student** Roster::getRosterArray() {
     return classRosterArray;
 }
 
+/*----- PUBLIC METHOD IMPLEMENTATIONS -----*/
 // Requirement E.3.a
 // sets the instance variables from part D1 and updates the roster.
 void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram) {
@@ -151,6 +150,7 @@ void Roster::printAverageDaysInCourse(string studentID) {
 // verifies student email addresses and displays all invalid email addresses to the user.
     //Note: A valid email should include an at sign ('@') and period ('.') and should not include a space (' ').
 void Roster::printInvalidEmails() {
+    cout << "\nPrinting Invalid Email Addresses...\n" << endl;
     cout << left << setw(13) << "Student ID";
     cout << left << setw(25) << "Email Address" << endl;
     cout << setfill('-') << setw(40) << "-" << endl << setfill(' ');
@@ -160,7 +160,7 @@ void Roster::printInvalidEmails() {
             cout << classRosterArray[i]->getStudentID() << left << setw(13) << ": " << email << endl;
         }
     }
-    cout << endl;
+    cout << "\n" << endl;
 }
 
 // Requirement 5.3.f
@@ -180,4 +180,5 @@ void Roster::printByDegreeProgram(DegreeProgram degreeProgram) {
             classRosterArray[i]->print();
         }
     }
+    cout << "\n" << endl;
 }

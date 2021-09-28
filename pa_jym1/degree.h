@@ -9,9 +9,9 @@
 #define degree_h
 #include <string>
 
-
 enum DegreeProgram { SECURITY, NETWORK, SOFTWARE, UNDECIDED }; // Requirement C
-const static std::string DEGREE_PROGRAM_STRINGS[] { "SECURITY", "NETWORK", "SOFTWARE", "UNDECIDED" };
 
+// Allows for easy printing of degreeProgram
+const static std::string DEGREE_PROGRAM_STRINGS[] { "SECURITY", "NETWORK", "SOFTWARE", "UNDECIDED" };
 
 #endif /* degree_h */

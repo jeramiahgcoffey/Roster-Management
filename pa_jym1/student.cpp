@@ -17,23 +17,24 @@ using std::endl;
 using std::left;
 using std::setw;
 
-// Implementation of constructor    // Requirement D.2.d
+/*----- CONSTRUCTOR IMPLEMENTATION -----*/    // Requirement D.2.d
 Student::Student(string studentID, string firstName, string lastName, string emailAddress, int age, int daysRemainingInEachCourse[], DegreeProgram degreeProgram)
-    : studentID{studentID}, firstName{firstName}, lastName{lastName}, emailAddress{emailAddress}, age{age}, daysRemainingInEachCourse{new int[DAYS_ARR_SIZE]}, degreeProgram{degreeProgram} {
+    : studentID{studentID}, firstName{firstName}, lastName{lastName}, emailAddress{emailAddress}, age{age}, daysRemainingInEachCourse{new int[DAYS_ARR_SIZE]}, degreeProgram{degreeProgram}
+{
         for (size_t i = 0; i < DAYS_ARR_SIZE; i++) this->daysRemainingInEachCourse[i] = daysRemainingInEachCourse[i];
-        cout << "\nStudent Constructor Called.." << endl;
+        //cout << "\nStudent Constructor Called.." << endl;
 }
 
-// Implementation of destructor
+/*----- DESTRUCTOR IMPLEMENTATION -----*/
 Student::~Student() {
     if (daysRemainingInEachCourse != nullptr) {
         delete[] daysRemainingInEachCourse;
         daysRemainingInEachCourse = nullptr;
     }
-    cout << "\nStudent Destructor Called.." << endl;
+    //cout << "\nStudent Destructor Called.." << endl;
 }
 
-// Implementation of getters    // Reqirement D.2.a
+/*----- ACCESSOR IMPLEMENTATIONS -----*/    // Reqirement D.2.a
 string Student::getStudentID() const {
     return studentID;
 }
@@ -62,7 +63,7 @@ DegreeProgram Student::getDegreeProgram() const {
     return degreeProgram;
 }
 
-//Implementation of setters   // Reqirement D.2.b
+/*----- MUTATOR IMPLEMENTATIONS -----*/   // Reqirement D.2.b
 void Student::setStudentID(string idVal) {
     studentID = idVal;
 }
@@ -91,6 +92,7 @@ void Student::setDegreeProgram(DegreeProgram programVal) {
     degreeProgram = programVal;
 }
 
+/*----- PUBLIC METHOD IMPLEMENTATIONS -----*/
 // Print student data    // Requirement D.2.e
 void Student::print() const {
     cout << left << setw(5) << studentID;

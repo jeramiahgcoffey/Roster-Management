@@ -28,6 +28,7 @@ int main() { // Requirement F
         "A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY",
         "A5,Jeramiah,Coffey,jerrygcoffey@gmail.com,24,15,20,25,SOFTWARE" };
     
+    // Create a pointer to a new Roster object, populate the Roster array with the data from studentData
     Roster* classRoster = new Roster(studentData, 5, 20);
     
     classRoster->printAll();
@@ -50,6 +51,7 @@ int main() { // Requirement F
     classRoster->remove("A3");
     //expected: the above line should print a message saying such a student with this ID was not found.
     
+    // Unallocates memory for each student in classRoster, then unallocates memory for the Roster object
     delete classRoster;
     
     cout << endl;
