@@ -24,6 +24,10 @@ public:
     
     // Public methods    // Requirements E.3.a-f
     void add(string student_id, string first_name, string last_name, string email_address, int age, int days_in_course_1, int days_in_course_2, int days_in_course_3, DegreeProgram degree_program);
+    
+    int get_head_count();
+    
+    Student** get_roster_array();
 
     void remove(string student_id);
 
@@ -31,10 +35,9 @@ public:
 
     void printAverageDaysInCourse(string student_id);
 
-    void printInvalidEmails(); //that verifies student email addresses and displays all invalid email addresses to the user.
-        //Note: A valid email should include an at sign ('@') and period ('.') and should not include a space (' ').
+    void printInvalidEmails();
     
-    void printByDegreeProgram(DegreeProgram); //that prints out student information for a degree program specified by an enumerated type.
+    void printByDegreeProgram(DegreeProgram degree_program);
 };
 
 #endif /* roster_h */

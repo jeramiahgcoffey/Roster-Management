@@ -12,6 +12,7 @@
 
 #include "roster.h"
 #include "student.h"
+#include "degree.h"
 
 using std::cout;
 using std::endl;
@@ -64,6 +65,14 @@ Roster::~Roster(){
 }
 
 // Implementation of public methods
+
+int Roster::get_head_count() {
+    return head_count;
+}
+
+Student** Roster::get_roster_array() {
+    return class_roster_array;
+}
 
 // Requirement E.3.a
 // sets the instance variables from part D1 and updates the roster.
@@ -148,3 +157,21 @@ void Roster::printInvalidEmails() {
     cout << endl;
 }
 
+// Requirement 5.3.f
+// prints out student information for a degree program specified by an enumerated type.
+void Roster::printByDegreeProgram(DegreeProgram degree_program) {
+    cout << "\nPrinting all " << DEGREE_PROGRAM_STRINGS[degree_program] << " student information...\n" << endl;
+    cout << left << setw(5) << "ID";
+    cout << left << setw(13) << "First";
+    cout << left << setw(13) << "Last";
+    cout << left << setw(25) << "Email Address";
+    cout << left << setw(10) << "Age";
+    cout << left << setw(24) << "Course Days Remaining";
+    cout << left << setw(15) << "Degree Program" << endl;
+    cout << setfill('-') << setw(105) << "-" << endl << setfill(' ');
+    for (size_t i = 0; i < head_count; i++) {
+        if (class_roster_array[i]->get_degree_program() == degree_program) {
+            class_roster_array[i]->print();
+        }
+    }
+}
