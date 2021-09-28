@@ -61,6 +61,10 @@ Roster::Roster(const string studentData[], int headCount, int rosterMaxSize) : c
 
 // Implementation of destructor
 Roster::~Roster(){
+    for (size_t i = 0; i < headCount; i++) {
+        delete classRosterArray[i];
+        classRosterArray[i] = nullptr;
+    }
     delete[] classRosterArray;
     classRosterArray = nullptr;
     cout << "\nRoster Destructor Called.." << endl;

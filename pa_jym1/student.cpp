@@ -21,7 +21,7 @@ using std::setw;
 Student::Student(string studentID, string firstName, string lastName, string emailAddress, int age, int daysRemainingInEachCourse[], DegreeProgram degreeProgram)
     : studentID{studentID}, firstName{firstName}, lastName{lastName}, emailAddress{emailAddress}, age{age}, daysRemainingInEachCourse{new int[DAYS_ARR_SIZE]}, degreeProgram{degreeProgram} {
         for (size_t i = 0; i < DAYS_ARR_SIZE; i++) this->daysRemainingInEachCourse[i] = daysRemainingInEachCourse[i];
-        cout << "Student Constructor Called.." << endl;
+        cout << "\nStudent Constructor Called.." << endl;
 }
 
 // Implementation of destructor
@@ -30,7 +30,7 @@ Student::~Student() {
         delete[] daysRemainingInEachCourse;
         daysRemainingInEachCourse = nullptr;
     }
-    cout << "Student Destructor Called.." << endl;
+    cout << "\nStudent Destructor Called.." << endl;
 }
 
 // Implementation of getters    // Reqirement D.2.a
