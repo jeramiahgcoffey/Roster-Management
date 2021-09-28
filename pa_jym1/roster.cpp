@@ -14,10 +14,8 @@
 
 using std::stoi;
 
-// Implementation of Constructors
-Roster::Roster() : class_roster_array{nullptr}, head_count{-1}, roster_max_size{0} {
-}
-                                                                // Requirement E.1
+// Implementation of Constructor
+// Requirement E.1
 Roster::Roster(const string student_data[], int head_count, int roster_max_size) : class_roster_array{new Student * [roster_max_size]}, head_count{head_count} {
     for (size_t i = 0; i < head_count; i++) { // Loops through every student in student_data array
         // Requirement E.2.a
@@ -59,6 +57,7 @@ Roster::~Roster(){
 }
 
 // Implementation of public methods
+
 // Requirement E.3.a
 // sets the instance variables from part D1 and updates the roster.
 void Roster::add(string student_id, string first_name, string last_name, string email_address, int age, int days_in_course_1, int days_in_course_2, int days_in_course_3, DegreeProgram degree_program) {

@@ -18,9 +18,8 @@ private:
     Student** class_roster_array; //Requirement E.1
     
 public:
-    // Constructors/Destructor
-    Roster();
-    Roster(const string studentData[], int head_count, int roster_max_size);
+    // Constructor/Destructor
+    Roster(const string studentData[] = nullptr, int head_count = -1, int roster_max_size = 0);
     ~Roster();
     
     // Public methods    // Requirements E.3.a-f

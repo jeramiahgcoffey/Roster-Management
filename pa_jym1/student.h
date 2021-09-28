@@ -30,10 +30,10 @@ public:
     static const int DAYS_ARR_SIZE {3};
     
     // Contructor declaration   // Requirement D.2.d
-    Student(string student_id, string first_name, string last_name, string email_address, int age, int days_remaining_in_each_course[], DegreeProgram degree_program);
+    Student(string student_id = "", string first_name = "", string last_name = "", string email_address = "", int age = -1, int days_remaining_in_each_course[] = new int[]{0,0,0}, DegreeProgram degree_program = UNDECIDED);
     
     // Default Contructor declaration
-    Student();
+    // Student();
     
     // Destructor declaration
     ~Student();
