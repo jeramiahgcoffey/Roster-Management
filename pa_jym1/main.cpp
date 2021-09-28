@@ -32,7 +32,7 @@ int main() {
 //    DegreeProgram jDegree {SOFTWARE};
 //
 //    Student jeramiahCoffey = Student(jId, jFirst, jLast, jEmail, jAge, jDays_remaining, jDegree);
-//    cout << jeramiahCoffey.get_days_remaining() << endl;
+//    std::cout << *jeramiahCoffey.get_days_remaining() << std::endl;
 //    jeramiahCoffey.print();
 //    jeramiahCoffey.set_days_remaining(new_remaining);
 //    jeramiahCoffey.print();
@@ -54,6 +54,7 @@ int main() {
 //    my_roster.remove("A5");
 //    my_roster.printAll();
 //    my_roster.remove("A3");
+    my_roster.printAverageDaysInCourse("A5");
 
     return 0;
 }

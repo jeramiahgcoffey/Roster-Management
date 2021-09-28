@@ -29,7 +29,7 @@ public:
 
     void printAll();
 
-    void printAverageDaysInCourse(string);  //that correctly prints a student’s average number of days in the three courses. The student is identified by the studentID parameter.
+    void printAverageDaysInCourse(string student_id);
 
     void printInvalidEmails(); //that verifies student email addresses and displays all invalid email addresses to the user.
         //Note: A valid email should include an at sign ('@') and period ('.') and should not include a space (' ').

@@ -116,3 +116,17 @@ void Roster::printAll() {
     }
     cout << setfill('-') << setw(105) << "-" << endl << setfill(' ');
 }
+
+// Requirement E.3.d
+// prints a student’s average number of days in the three courses. The student is identified by the studentID parameter.
+void Roster::printAverageDaysInCourse(string student_id) {
+    for (size_t i = 0; i < head_count; i++) {
+        if (class_roster_array[i]->get_student_id() == student_id) {
+            int* course_days_remaining = class_roster_array[i]->get_days_remaining();
+            double average {static_cast<double>((course_days_remaining[0] + course_days_remaining[1] + course_days_remaining[2]) / 3)};
+            cout << "\n" << student_id << ": " << class_roster_array[i]->get_first_name() << endl;
+            cout << "Average course days remaining: " << average << endl;
+        }
+    }
+}
+
