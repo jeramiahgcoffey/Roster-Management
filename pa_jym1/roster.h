@@ -13,31 +13,31 @@
 class Roster {
 private:
     // Data Members
-    int head_count;
-    int roster_max_size;
-    Student** class_roster_array; //Requirement E.1
+    int headCount;
+    int rosterMaxSize;
+    Student** classRosterArray; //Requirement E.1
     
 public:
     // Constructor/Destructor
-    Roster(const string studentData[] = nullptr, int head_count = -1, int roster_max_size = 0);
+    Roster(const string studentData[] = nullptr, int headCount = -1, int rosterMaxSize = 0);
     ~Roster();
     
     // Public methods    // Requirements E.3.a-f
-    void add(string student_id, string first_name, string last_name, string email_address, int age, int days_in_course_1, int days_in_course_2, int days_in_course_3, DegreeProgram degree_program);
+    void add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram);
     
-    int get_head_count();
+    int getHeadCount();
     
-    Student** get_roster_array();
+    Student** getRosterArray();
 
-    void remove(string student_id);
+    void remove(string studentID);
 
     void printAll();
 
-    void printAverageDaysInCourse(string student_id);
+    void printAverageDaysInCourse(string studentID);
 
     void printInvalidEmails();
     
-    void printByDegreeProgram(DegreeProgram degree_program);
+    void printByDegreeProgram(DegreeProgram degreeProgram);
 };
 
 #endif /* roster_h */

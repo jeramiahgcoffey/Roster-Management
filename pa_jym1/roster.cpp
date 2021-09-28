@@ -23,88 +23,90 @@ using std::stoi;
 
 // Implementation of Constructor
 // Requirement E.1
-Roster::Roster(const string student_data[], int head_count, int roster_max_size) : class_roster_array{new Student * [roster_max_size]}, head_count{head_count} {
-    for (size_t i = 0; i < head_count; i++) { // Loops through every student in student_data array
+Roster::Roster(const string studentData[], int headCount, int rosterMaxSize) : classRosterArray{new Student * [rosterMaxSize]}, headCount{headCount} {
+    for (size_t i = 0; i < headCount; i++) { // Loops through every student in studentData array
         // Requirement E.2.a
         // Add each attribute of a specific student to a vector
-        std::vector <string> current_student_data;
-        string attribute_to_add;
-        std::istringstream in_ss(student_data[i]);
-        while(std::getline(in_ss, attribute_to_add, ',')) { // Loop ends at new line char, which is the end of a specific students data
-            current_student_data.push_back(attribute_to_add);
+        std::vector <string> currentStudentData;
+        string attributeToAdd;
+        std::istringstream inSS(studentData[i]);
+        while(std::getline(inSS, attributeToAdd, ',')) { // Loop ends at new line char, which is the end of a specific students data
+            currentStudentData.push_back(attributeToAdd);
         }
         
         // Convert string to intergers where appropriate
-        int age {stoi(current_student_data[4])};
-        int course_days_remaining[3] {stoi(current_student_data[5]), stoi(current_student_data[6]), stoi(current_student_data[7])};
+        int age {stoi(currentStudentData[4])};
+        int courseDaysRemaining[3] {stoi(currentStudentData[5]), stoi(currentStudentData[6]), stoi(currentStudentData[7])};
         
         // Convert Degree Plan to defined enum type
-        DegreeProgram degree_program;
-        if (current_student_data[8] == "SECURITY") degree_program = SECURITY;
-        else if (current_student_data[8] == "NETWORK") degree_program = NETWORK;
-        else if (current_student_data[8] == "SOFTWARE") degree_program = SOFTWARE;
-        else degree_program = UNDECIDED;
+        DegreeProgram degreeProgram;
+        if (currentStudentData[8] == "SECURITY") degreeProgram = SECURITY;
+        else if (currentStudentData[8] == "NETWORK") degreeProgram = NETWORK;
+        else if (currentStudentData[8] == "SOFTWARE") degreeProgram = SOFTWARE;
+        else degreeProgram = UNDECIDED;
                 
         // Create other attribute variables
-        string id {current_student_data[0]};
-        string first_name {current_student_data[1]};
-        string last_name {current_student_data[2]};
-        string email {current_student_data[3]};
+        string id {currentStudentData[0]};
+        string firstName {currentStudentData[1]};
+        string lastName {currentStudentData[2]};
+        string email {currentStudentData[3]};
         
         // Requirement E.2.b
-        // Create Student obj from each student in student_data arr and add to classRosterArray
-        class_roster_array[i] = new Student(id, first_name, last_name, email, age, course_days_remaining, degree_program);
+        // Create Student obj from each student in studentData arr and add to classRosterArray
+        classRosterArray[i] = new Student(id, firstName, lastName, email, age, courseDaysRemaining, degreeProgram);
         
     }
+    cout << "\nRoster Constructor Called.." << endl;
 }
 
 // Implementation of destructor
 Roster::~Roster(){
-    delete[] class_roster_array;
-    class_roster_array = nullptr;
+    delete[] classRosterArray;
+    classRosterArray = nullptr;
+    cout << "\nRoster Destructor Called.." << endl;
 }
 
 // Implementation of public methods
 
-int Roster::get_head_count() {
-    return head_count;
+int Roster::getHeadCount() {
+    return headCount;
 }
 
-Student** Roster::get_roster_array() {
-    return class_roster_array;
+Student** Roster::getRosterArray() {
+    return classRosterArray;
 }
 
 // Requirement E.3.a
 // sets the instance variables from part D1 and updates the roster.
-void Roster::add(string student_id, string first_name, string last_name, string email_address, int age, int days_in_course_1, int days_in_course_2, int days_in_course_3, DegreeProgram degree_program) {
+void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram) {
     // sets the instance variables from part D1 and updates the roster.
-    int days_in_course[] {days_in_course_1, days_in_course_2, days_in_course_3};
-    class_roster_array[head_count] = new Student(student_id, first_name, last_name, email_address, age, days_in_course, degree_program);
-    head_count++;
-    cout << first_name << " " << last_name << " was added to the roster." << endl;
+    int daysInCourse[] {daysInCourse1, daysInCourse2, daysInCourse3};
+    classRosterArray[headCount] = new Student(studentID, firstName, lastName, emailAddress, age, daysInCourse, degreeProgram);
+    headCount++;
+    cout << firstName << " " << lastName << " was added to the roster." << endl;
 }
 
 // Requirement E.3.b
 // removes students from the roster by student ID. If the student ID does not exist, the function prints an error message indicating that the student was not found.
-void Roster::remove(string student_id) {
-    bool student_found {false};
+void Roster::remove(string studentID) {
+    bool studentFound {false};
     size_t i {0};
-    while (i < head_count && !student_found) {
-        if (class_roster_array[i]->get_student_id() == student_id) {
-            student_found = true;
+    while (i < headCount && !studentFound) {
+        if (classRosterArray[i]->getStudentID() == studentID) {
+            studentFound = true;
             size_t j {i};
-            while (j < head_count){
-                class_roster_array[j] = class_roster_array[j + 1];
+            while (j < headCount){
+                classRosterArray[j] = classRosterArray[j + 1];
                 j++;
             }
         }
         i++;
     }
-    if (student_found) {
-        head_count--; // Damn bug took forever to find
-        cout << "Student " << student_id << " was successfully removed." << endl;
+    if (studentFound) {
+        headCount--;
+        cout << "\nStudent " << studentID << " was successfully removed." << endl;
     } else {
-        cout << "Error: Student " << student_id << " was not found." << endl;
+        cout << "\nError: Student " << studentID << " was not found." << endl;
     }
 }
 
@@ -120,8 +122,8 @@ void Roster::printAll() {
     cout << left << setw(24) << "Course Days Remaining";
     cout << left << setw(15) << "Degree Program" << endl;
     cout << setfill('-') << setw(105) << "-" << endl << setfill(' ');
-    for (size_t i = 0; i < head_count; i++) {
-        class_roster_array[i]->print();
+    for (size_t i = 0; i < headCount; i++) {
+        classRosterArray[i]->print();
     }
     cout << endl;
 
@@ -129,12 +131,12 @@ void Roster::printAll() {
 
 // Requirement E.3.d
 // prints a student’s average number of days in the three courses. The student is identified by the studentID parameter.
-void Roster::printAverageDaysInCourse(string student_id) {
-    for (size_t i = 0; i < head_count; i++) {
-        if (class_roster_array[i]->get_student_id() == student_id) {
-            int* course_days_remaining = class_roster_array[i]->get_days_remaining();
-            double average {static_cast<double>((course_days_remaining[0] + course_days_remaining[1] + course_days_remaining[2]) / 3)};
-            cout << "\n" << student_id << ": " << class_roster_array[i]->get_first_name() << endl;
+void Roster::printAverageDaysInCourse(string studentID) {
+    for (size_t i = 0; i < headCount; i++) {
+        if (classRosterArray[i]->getStudentID() == studentID) {
+            int* courseDaysRemaining = classRosterArray[i]->getDaysRemaining();
+            double average {static_cast<double>((courseDaysRemaining[0] + courseDaysRemaining[1] + courseDaysRemaining[2]) / 3)};
+            cout << studentID << ": " << classRosterArray[i]->getFirstName() << endl;
             cout << "Average course days remaining: " << average << endl;
             cout << endl;
         }
@@ -148,10 +150,10 @@ void Roster::printInvalidEmails() {
     cout << left << setw(13) << "Student ID";
     cout << left << setw(25) << "Email Address" << endl;
     cout << setfill('-') << setw(40) << "-" << endl << setfill(' ');
-    for (size_t i = 0; i < head_count; i++) {
-        string email {class_roster_array[i]->get_email_address()};
+    for (size_t i = 0; i < headCount; i++) {
+        string email {classRosterArray[i]->getEmailAddress()};
         if (email.find('@') == string::npos || email.find('.') == string::npos || email.find(' ') != string::npos) {
-            cout << class_roster_array[i]->get_student_id() << left << setw(13) << ": " << email << endl;
+            cout << classRosterArray[i]->getStudentID() << left << setw(13) << ": " << email << endl;
         }
     }
     cout << endl;
@@ -159,8 +161,8 @@ void Roster::printInvalidEmails() {
 
 // Requirement 5.3.f
 // prints out student information for a degree program specified by an enumerated type.
-void Roster::printByDegreeProgram(DegreeProgram degree_program) {
-    cout << "\nPrinting all " << DEGREE_PROGRAM_STRINGS[degree_program] << " student information...\n" << endl;
+void Roster::printByDegreeProgram(DegreeProgram degreeProgram) {
+    cout << "\nPrinting all " << DEGREE_PROGRAM_STRINGS[degreeProgram] << " student information...\n" << endl;
     cout << left << setw(5) << "ID";
     cout << left << setw(13) << "First";
     cout << left << setw(13) << "Last";
@@ -169,9 +171,9 @@ void Roster::printByDegreeProgram(DegreeProgram degree_program) {
     cout << left << setw(24) << "Course Days Remaining";
     cout << left << setw(15) << "Degree Program" << endl;
     cout << setfill('-') << setw(105) << "-" << endl << setfill(' ');
-    for (size_t i = 0; i < head_count; i++) {
-        if (class_roster_array[i]->get_degree_program() == degree_program) {
-            class_roster_array[i]->print();
+    for (size_t i = 0; i < headCount; i++) {
+        if (classRosterArray[i]->getDegreeProgram() == degreeProgram) {
+            classRosterArray[i]->print();
         }
     }
 }
