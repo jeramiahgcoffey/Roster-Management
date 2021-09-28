@@ -1,4 +1,4 @@
-# pa_jym1-C867
+# pa_jym1_C867
 ## _Roster Management Application, WGU C867_
 SCENARIO
 <br>
