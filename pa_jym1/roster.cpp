@@ -103,7 +103,6 @@ void Roster::remove(string student_id) {
 // prints a complete tab-separated list of student data in the provided format
 void Roster::printAll() {
     cout << "\nPrinting roster...\n" << endl;
-    cout << setfill('-') << setw(105) << "-" << endl << setfill(' ');
     cout << left << setw(5) << "ID";
     cout << left << setw(13) << "First";
     cout << left << setw(13) << "Last";
@@ -111,10 +110,12 @@ void Roster::printAll() {
     cout << left << setw(10) << "Age";
     cout << left << setw(24) << "Course Days Remaining";
     cout << left << setw(15) << "Degree Program" << endl;
+    cout << setfill('-') << setw(105) << "-" << endl << setfill(' ');
     for (size_t i = 0; i < head_count; i++) {
         class_roster_array[i]->print();
     }
-    cout << setfill('-') << setw(105) << "-" << endl << setfill(' ');
+    cout << endl;
+
 }
 
 // Requirement E.3.d
@@ -126,7 +127,24 @@ void Roster::printAverageDaysInCourse(string student_id) {
             double average {static_cast<double>((course_days_remaining[0] + course_days_remaining[1] + course_days_remaining[2]) / 3)};
             cout << "\n" << student_id << ": " << class_roster_array[i]->get_first_name() << endl;
             cout << "Average course days remaining: " << average << endl;
+            cout << endl;
         }
     }
+}
+
+// Requirement 5.3.e
+// verifies student email addresses and displays all invalid email addresses to the user.
+    //Note: A valid email should include an at sign ('@') and period ('.') and should not include a space (' ').
+void Roster::printInvalidEmails() {
+    cout << left << setw(13) << "Student ID";
+    cout << left << setw(25) << "Email Address" << endl;
+    cout << setfill('-') << setw(40) << "-" << endl << setfill(' ');
+    for (size_t i = 0; i < head_count; i++) {
+        string email {class_roster_array[i]->get_email_address()};
+        if (email.find('@') == string::npos || email.find('.') == string::npos || email.find(' ') != string::npos) {
+            cout << class_roster_array[i]->get_student_id() << left << setw(13) << ": " << email << endl;
+        }
+    }
+    cout << endl;
 }
 

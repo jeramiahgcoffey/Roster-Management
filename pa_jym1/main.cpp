@@ -40,7 +40,7 @@ int main() {
 //    test.print();
     Roster my_roster(student_data, 5, 10);
 //    my_roster.add("test", "jeramiah", "coffey", "gmail", 24, 1, 2, 3, UNDECIDED);
-//    my_roster.printAll();
+    my_roster.printAll();
 //    my_roster.remove("A3");
 //    my_roster.printAll();
 //    my_roster.add("test", "", "", "", 0, 0,0,0, UNDECIDED);
@@ -55,6 +55,7 @@ int main() {
 //    my_roster.printAll();
 //    my_roster.remove("A3");
     my_roster.printAverageDaysInCourse("A5");
+    my_roster.printInvalidEmails();
 
     return 0;
 }
