@@ -23,11 +23,11 @@ public:
     ~Roster();
     
     // Public methods    // Requirements E.3.a-f
-    void add(string student_id, string first_name, string last_name, string email_address, int age, int days_in_course_1, int days_in_course_2, int days_in_course_3, DegreeProgram degree_program);  // sets the instance variables from part D1 and updates the roster.
+    void add(string student_id, string first_name, string last_name, string email_address, int age, int days_in_course_1, int days_in_course_2, int days_in_course_3, DegreeProgram degree_program);
 
-    void remove(string student_id);  //that removes students from the roster by student ID. If the student ID does not exist, the function prints an error message indicating that the student was not found.
+    void remove(string student_id);
 
-    void printAll(); //that prints a complete tab-separated list of student data in the provided format: A1 [tab] First Name: John [tab] Last Name: Smith [tab] Age: 20 [tab]daysInCourse: {35, 40, 55} Degree Program: Security. The printAll() function should loop through all the students in classRosterArray and call the print() function for each student.
+    void printAll();
 
     void printAverageDaysInCourse(string);  //that correctly prints a student’s average number of days in the three courses. The student is identified by the studentID parameter.
 

@@ -88,8 +88,6 @@ void Roster::remove(string student_id) {
                 class_roster_array[j] = class_roster_array[j + 1];
                 j++;
             }
-            delete[] class_roster_array[head_count - 1];
-//            class_roster_array[head_count - 1] = nullptr;
         }
         i++;
     }
@@ -102,9 +100,9 @@ void Roster::remove(string student_id) {
 }
 
 // Requirement E.3.c
-// prints a complete tab-separated list of student data in the provided format: A1 [tab] First Name: John [tab] Last Name: Smith [tab] Age: 20 [tab]daysInCourse: {35, 40, 55} Degree Program: Security. The printAll() function should loop through all the students in classRosterArray and call the print() function for each student.
+// prints a complete tab-separated list of student data in the provided format
 void Roster::printAll() {
-    cout << "\nPrinting full roster...\n" << endl;
+    cout << "\nPrinting roster...\n" << endl;
     cout << setfill('-') << setw(105) << "-" << endl << setfill(' ');
     cout << left << setw(5) << "ID";
     cout << left << setw(13) << "First";

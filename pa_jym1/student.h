@@ -31,9 +31,6 @@ public:
     // Contructor declaration   // Requirement D.2.d
     Student(string student_id = "", string first_name = "", string last_name = "", string email_address = "", int age = -1, int days_remaining_in_each_course[] = new int[]{0,0,0}, DegreeProgram degree_program = UNDECIDED);
     
-    // Default Contructor declaration
-    // Student();
-    
     // Destructor declaration
     ~Student();
     // Copy Contructor

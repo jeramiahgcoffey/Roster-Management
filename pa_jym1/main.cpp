@@ -20,7 +20,8 @@ int main() {
         "A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY",
         "A5,Jeramiah,Coffey,jerrygcoffey@gmail.com,24,15,20,25,SOFTWARE" };
     
-//    Test
+//    Tests
+    
 //    string jId {"123"};
 //    string jFirst {"jeramiah"};
 //    string jLast {"coffey"};
@@ -39,15 +40,20 @@ int main() {
 //    test.print();
     Roster my_roster(student_data, 5, 10);
 //    my_roster.add("test", "jeramiah", "coffey", "gmail", 24, 1, 2, 3, UNDECIDED);
-    my_roster.printAll();
-    my_roster.remove("A3");
-    my_roster.printAll();
-    
-    
-    
-    
-
-    
+//    my_roster.printAll();
+//    my_roster.remove("A3");
+//    my_roster.printAll();
+//    my_roster.add("test", "", "", "", 0, 0,0,0, UNDECIDED);
+//    my_roster.printAll();
+//    my_roster.add("test", "", "", "", 0, 0,0,0, UNDECIDED);
+//    my_roster.printAll();
+//    my_roster.add("test", "", "", "", 0, 0,0,0, UNDECIDED);
+//    my_roster.printAll();
+//    my_roster.add("test", "", "", "", 0, 0,0,0, UNDECIDED);
+//    my_roster.printAll();
+//    my_roster.remove("A5");
+//    my_roster.printAll();
+//    my_roster.remove("A3");
 
     return 0;
 }
