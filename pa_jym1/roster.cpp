@@ -4,14 +4,20 @@
 //
 //  Created by Jeramiah Coffey on 9/8/21.
 //
-#include <vector>
 #include <iostream>
+#include <iomanip>
+#include <vector>
 #include <string>
 #include <sstream>
 
 #include "roster.h"
 #include "student.h"
 
+using std::cout;
+using std::endl;
+using std::left;
+using std::setw;
+using std::setfill;
 using std::stoi;
 
 // Implementation of Constructor
@@ -53,7 +59,8 @@ Roster::Roster(const string student_data[], int head_count, int roster_max_size)
 
 // Implementation of destructor
 Roster::~Roster(){
-    // IMPLEMENT LATER //
+    delete[] class_roster_array;
+    class_roster_array = nullptr;
 }
 
 // Implementation of public methods
@@ -65,5 +72,49 @@ void Roster::add(string student_id, string first_name, string last_name, string 
     int days_in_course[] {days_in_course_1, days_in_course_2, days_in_course_3};
     class_roster_array[head_count] = new Student(student_id, first_name, last_name, email_address, age, days_in_course, degree_program);
     head_count++;
-    std::cout << first_name << " " << last_name << " was added to the roster." << std::endl;
+    cout << first_name << " " << last_name << " was added to the roster." << endl;
+}
+
+// Requirement E.3.b
+// removes students from the roster by student ID. If the student ID does not exist, the function prints an error message indicating that the student was not found.
+void Roster::remove(string student_id) {
+    bool student_found {false};
+    size_t i {0};
+    while (i < head_count && !student_found) {
+        if (class_roster_array[i]->get_student_id() == student_id) {
+            student_found = true;
+            size_t j {i};
+            while (j < head_count){
+                class_roster_array[j] = class_roster_array[j + 1];
+                j++;
+            }
+            delete[] class_roster_array[head_count - 1];
+//            class_roster_array[head_count - 1] = nullptr;
+        }
+        i++;
+    }
+    if (student_found) {
+        head_count--; // Damn bug took forever to find
+        cout << "Student " << student_id << " was successfully removed." << endl;
+    } else {
+        cout << "Error: Student " << student_id << " was not found." << endl;
+    }
+}
+
+// Requirement E.3.c
+// prints a complete tab-separated list of student data in the provided format: A1 [tab] First Name: John [tab] Last Name: Smith [tab] Age: 20 [tab]daysInCourse: {35, 40, 55} Degree Program: Security. The printAll() function should loop through all the students in classRosterArray and call the print() function for each student.
+void Roster::printAll() {
+    cout << "\nPrinting full roster...\n" << endl;
+    cout << setfill('-') << setw(105) << "-" << endl << setfill(' ');
+    cout << left << setw(5) << "ID";
+    cout << left << setw(13) << "First";
+    cout << left << setw(13) << "Last";
+    cout << left << setw(25) << "Email Address";
+    cout << left << setw(10) << "Age";
+    cout << left << setw(24) << "Course Days Remaining";
+    cout << left << setw(15) << "Degree Program" << endl;
+    for (size_t i = 0; i < head_count; i++) {
+        class_roster_array[i]->print();
+    }
+    cout << setfill('-') << setw(105) << "-" << endl << setfill(' ');
 }

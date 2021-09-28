@@ -7,12 +7,11 @@
 
 #ifndef student_h
 #define student_h
-#include "degree.h"
 
 #include <string>
+#include "degree.h"
 
 using std::string;
-
 
 class Student {
     

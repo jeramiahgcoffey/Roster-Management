@@ -12,7 +12,6 @@
 #include "student.h"
 #include "degree.h"
 
-using std::string;
 using std::cout;
 using std::endl;
 using std::left;
@@ -24,16 +23,10 @@ Student::Student(string student_id, string first_name, string last_name, string 
         for (size_t i = 0; i < DAYS_ARR_SIZE; i++) this->days_remaining_in_each_course[i] = days_remaining_in_each_course[i];
 }
 
-// Implementation of default constructor
-//Student::Student()
-//: student_id{""}, first_name{""}, last_name{""}, email_address{""}, age{-1}, days_remaining_in_each_course{new int[DAYS_ARR_SIZE]{0,0,0}}, degree_program{UNDECIDED} {
-//    for (size_t i = 0; i < DAYS_ARR_SIZE; i++) days_remaining_in_each_course[i] = 0;
-//}
-
 // Implementation of destructor
 Student::~Student() {
     if (days_remaining_in_each_course != nullptr) {
-        delete [] days_remaining_in_each_course;
+        delete[] days_remaining_in_each_course;
         days_remaining_in_each_course = nullptr;
     }
 }
@@ -99,14 +92,13 @@ void Student::set_degree_program(DegreeProgram program_val) {
 // Print student data    // Requirement D.2.e
 void Student::print() const {
     cout << left << setw(5) << student_id;
-    cout << left << setw(10) << first_name;
-    cout << left << setw(10) << last_name;
+    cout << left << setw(13) << first_name;
+    cout << left << setw(13) << last_name;
     cout << left << setw(25) << email_address;
     cout << left << setw(10) << age;
-    cout << left << setw(5) << days_remaining_in_each_course[0];
-    cout << left << setw(5) << days_remaining_in_each_course[1];
-    cout << left << setw(5) << days_remaining_in_each_course[2];
-    cout << left << setw(10) << DEGREE_PROGRAM_STRINGS[get_degree_program()];
-    cout << endl;
+    cout << left << setw(8) << days_remaining_in_each_course[0];
+    cout << left << setw(8) << days_remaining_in_each_course[1];
+    cout << left << setw(8) << days_remaining_in_each_course[2];
+    cout << left << setw(10) << DEGREE_PROGRAM_STRINGS[get_degree_program()] << endl;
 }
 

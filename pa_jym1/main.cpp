@@ -4,15 +4,11 @@
 //
 //  Created by Jeramiah Coffey on 9/8/21.
 //
-#include "degree.h"
-#include "student.h"
-#include "roster.h"
-
 #include <iostream>
 
-using std::cout;
-using std::cin;
-using std::endl;
+#include "degree.h"
+#include "roster.h"
+#include "student.h"
 
 int main() {
     
@@ -41,8 +37,11 @@ int main() {
 //    jeramiahCoffey.print();
 //    Student test;
 //    test.print();
-//    Roster my_roster(student_data, 5, 10);
+    Roster my_roster(student_data, 5, 10);
 //    my_roster.add("test", "jeramiah", "coffey", "gmail", 24, 1, 2, 3, UNDECIDED);
+    my_roster.printAll();
+    my_roster.remove("A3");
+    my_roster.printAll();
     
     
     
